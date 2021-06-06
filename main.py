@@ -35,6 +35,7 @@ def equal(item):
     global expression
     result = str(eval(expression))
     text.set(result)
+    expression = ""
 
 #placing buttons
 #Row-0
@@ -63,7 +64,7 @@ add = Button(btn_frame, text = "+", fg = "white", width = 10, height = 3, bd = 0
 #Row-4
 zero = Button(btn_frame, text = "0", fg = "white", width = 22, height = 3, bd = 0, bg = "black", cursor = "hand2", command = lambda: click("0")).grid(row = 4, column = 0, columnspan = 2)
 decimalPointer = Button(btn_frame, text=".", fg = "white", width = 10, height = 3, bd = 0, bg="black", cursor = "hand2", command = lambda: click(".")).grid(row = 4, column = 2)
-equalsTo = Button(btn_frame, text = "=", fg = "white", width = 10, height = 3, bd = 0, bg = "black", cursor = "hand2", command = lambda: click("=")).grid(row = 4, column = 3)
+equalsTo = Button(btn_frame, text = "=", fg = "white", width = 10, height = 3, bd = 0, bg = "black", cursor = "hand2", command = lambda: equal("=")).grid(row = 4, column = 3)
 
 #run calculator
 calc.mainloop()
